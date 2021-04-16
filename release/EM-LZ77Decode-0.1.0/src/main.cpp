@@ -170,8 +170,10 @@ int main(int argc, char **argv) {
         break;
       case 'h':
         usage(EXIT_FAILURE);
+        break;
       default:
         usage(EXIT_FAILURE);
+        break;
     }
   }
 
