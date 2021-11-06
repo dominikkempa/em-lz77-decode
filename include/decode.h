@@ -737,7 +737,7 @@ void decode(
   // Turn paths absolute.
   parsing_filename = utils::absolute_path(parsing_filename);
   output_filename = utils::absolute_path(output_filename);
-  utils::drop_disk_pages(parsing_filename);
+  utils::empty_page_cache(parsing_filename);
 
   // Unit of alignment, used to simplify handling long phrases.
   static const std::uint64_t alignment_unit_log = 22L;
