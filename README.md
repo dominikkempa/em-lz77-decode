@@ -35,20 +35,19 @@ The package contains a single Makefile in the main directory. Type
 'make' to build the executable. For usage instructions, run the
 program without any arguments.
 
-Example
-~~~~~~~
+### Example
 
 The simplest usage of EM-LZ77-Decode is as follows. Suppose the
 vbyte-encoded (see below) LZ77 parsing is located in
 /data/input.txt.lz77.vbyte. Then, to decode the text type:
 
-  $ ./decode_lz77 /data/input.txt.lz77.vbyte
+    $ ./decode_lz77 /data/input.txt.lz77.vbyte
 
 This will write the text to /data/input.txt.lz77.vbyte.decoded.
 By default, the algorithm uses 3.5GiB of RAM for computation. A
 more advanced usage is demonstrated below.
 
-  $ ./decode_lz77 ./input.txt.lz77.vbyte -m 8gi -o ../input.txt
+    $ ./decode_lz77 ./input.txt.lz77.vbyte -m 8gi -o ../input.txt
 
 Explanation:
 - The 'm' flag allows specifying the amount of RAM used during the
@@ -92,8 +91,8 @@ started. To increase the limits permanently, edit (as a root) the file
 /etc/security/limits.conf and add the following lines at the end
 (including the asterisks):
 
-* soft nofile 128000
-* hard nofile 128000
+    * soft nofile 128000
+    * hard nofile 128000
 
 This increases the limit to 128000 (use larger values if necessary).
 The new limits apply (check with ulimit -n) after starting new
@@ -121,3 +120,4 @@ LICENCE for more details.
 
 If you use this code, please cite the paper mentioned above and
 publish the URL from which you downloaded the code.
+
