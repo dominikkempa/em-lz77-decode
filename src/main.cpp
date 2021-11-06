@@ -47,7 +47,7 @@
 #include <unistd.h>
 #include <omp.h>
 
-#include "em_lz77decode_src/decode.h"
+#include "../include/decode.h"
 
 
 char *program_name;

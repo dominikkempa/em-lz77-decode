@@ -5,7 +5,7 @@ CFLAGS = -Wall -Wextra -pedantic -Wshadow -funroll-loops -std=c++0x -O3 -DNDEBUG
 
 all: decode_lz77
 decode_lz77:
-	$(CC) $(CFLAGS) -o decode_lz77 src/main.cpp src/em_lz77decode_src/utils.cpp
+	$(CC) $(CFLAGS) -o decode_lz77 src/main.cpp src/utils.cpp
 clean:
 	/bin/rm -f *.o
 nuclear:

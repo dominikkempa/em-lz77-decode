@@ -52,7 +52,7 @@
 #include <fstream>
 #include <algorithm>
 
-#include "utils.hpp"
+#include "../include/utils.hpp"
 
 
 namespace em_lz77decode_private {
