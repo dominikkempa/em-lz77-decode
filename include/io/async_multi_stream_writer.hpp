@@ -144,9 +144,10 @@ class async_multi_stream_writer {
   private:
     template<typename T>
     static void async_io_thread_code(async_multi_stream_writer<T> *caller) {
-      typedef buffer<T> buffer_type;
-      typedef request<buffer_type> request_type;
+      typedef buffer<T> buffer_type_T;
+      typedef request<buffer_type_T> request_type_T;
       while (true) {
+
         // Wait for request or until 'no more requests' flag is set.
         std::unique_lock<std::mutex> lk(caller->m_write_requests.m_mutex);
         while (caller->m_write_requests.empty() &&
@@ -155,13 +156,14 @@ class async_multi_stream_writer {
 
         if (caller->m_write_requests.empty() &&
             caller->m_write_requests.m_no_more_requests) {
+
           // No more requests -- exit.
           lk.unlock();
           break;
         }
 
         // Extract the buffer from the collection.
-        request_type request = caller->m_write_requests.get();
+        request_type_T request = caller->m_write_requests.get();
         lk.unlock();
 
         // Process the request.
